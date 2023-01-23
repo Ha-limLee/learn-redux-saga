@@ -4,8 +4,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore, applyMiddleware } from 'redux'
 
-import Counter from './Counter'
-import reducer from './reducers'
+import Counter from './features/counter/Counter'
+import reducer from './app/reducers'
 
 const store = createStore(reducer)
 
