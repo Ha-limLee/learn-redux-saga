@@ -1,25 +1,12 @@
-import React from 'react'
-import { PropTypes } from 'prop-types';
-
-const Counter = ({ value, onIncrement, onDecrement }) =>
-      <div>
-        <button onClick={onIncrement}>
-          Increment
-        </button>
-        {' '}
-        <button onClick={onDecrement}>
-          Decrement
-        </button>
-        <hr />
-        <div>
-          Clicked: {value} times
-        </div>
-      </div>
-
-Counter.propTypes = {
-  value: PropTypes.number.isRequired,
-  onIncrement: PropTypes.func.isRequired,
-  onDecrement: PropTypes.func.isRequired
+export default function counter(state = 0, action) {
+    switch (action.type) {
+        case 'INCREMENT':
+            return state + 1;
+        case 'INCREMENT_IF_ODD':
+            return (state % 2 !== 0) ? state + 1 : state;
+        case 'DECREMENT':
+            return state - 1;
+        default:
+            return state;
+    }
 }
-
-export default Counter
