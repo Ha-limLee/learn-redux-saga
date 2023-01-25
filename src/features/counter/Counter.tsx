@@ -1,7 +1,6 @@
 import React from 'react'
-import { PropTypes } from 'prop-types';
 
-export const Counter = ({ value, onIncrement, onDecrement, onIncrementAsync }) =>
+export const Counter = ({ value, onIncrement, onDecrement, onIncrementAsync }: {value: number, onIncrementAsync: () => void, onIncrement: () => void, onDecrement: () => void}) =>
   <div>
     <button onClick={onIncrementAsync}>
       Increment after 1 second
@@ -18,10 +17,3 @@ export const Counter = ({ value, onIncrement, onDecrement, onIncrementAsync }) =
       Clicked: {value} times
     </div>
   </div>;
-
-Counter.propTypes = {
-  value: PropTypes.number.isRequired,
-  onIncrement: PropTypes.func.isRequired,
-  onDecrement: PropTypes.func.isRequired,
-  onIncrementAsync: PropTypes.func.isRequired,
-};
